@@ -1,9 +1,13 @@
 package ar.edu.ucc.arqSoft.baseService.model;
 
+import java.util.Set;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
+import javax.persistence.FetchType;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -20,7 +24,7 @@ public class Pelicula extends GenericObject {
 	private String titulo;
 	
 	@NotNull
-	@Size (min = 10, max = 1000)
+	@Size (min = 10, max = 2500)
 	@Column(name = "SINOPSIS")
 	private String sinopsis;
 	
@@ -31,6 +35,17 @@ public class Pelicula extends GenericObject {
 	@Enumerated(value = EnumType.ORDINAL)
 	@Column(name = "GENERO")
 	private Genero genero;
+	
+	@OneToMany(mappedBy="pelicula", fetch = FetchType.LAZY)
+	private Set<Alquiler> alquileres;
+
+	public Set<Alquiler> getAlquileres() {
+		return alquileres;
+	}
+
+	public void setAlquileres(Set<Alquiler> alquileres) {
+		this.alquileres = alquileres;
+	}
 
 	public String getTitulo() {
 		return titulo;

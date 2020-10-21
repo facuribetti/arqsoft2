@@ -9,7 +9,6 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
 import ar.edu.ucc.arqSoft.common.model.GenericObject;
 
@@ -18,8 +17,7 @@ import ar.edu.ucc.arqSoft.common.model.GenericObject;
 public class Alquiler extends GenericObject{
 
 	@NotNull
-	@Size(min = 1, max = 250)
-	@Column(name = "FECHA")
+	@Column(name = "FECHA_ALQUILER")
 	private Date fechaAlquiler;
 	
 	@ManyToOne(fetch = FetchType.LAZY)
@@ -29,5 +27,29 @@ public class Alquiler extends GenericObject{
 	@ManyToOne(fetch = FetchType.LAZY)
 	@JoinColumn(name = "SOCIO_ID")
 	private Socio socio;
+
+	public Date getFechaAlquiler() {
+		return fechaAlquiler;
+	}
+
+	public void setFechaAlquiler(Date fechaAlquiler) {
+		this.fechaAlquiler = fechaAlquiler;
+	}
+
+	public Pelicula getPelicula() {
+		return pelicula;
+	}
+
+	public void setPelicula(Pelicula pelicula) {
+		this.pelicula = pelicula;
+	}
+
+	public Socio getSocio() {
+		return socio;
+	}
+
+	public void setSocio(Socio socio) {
+		this.socio = socio;
+	}
 
 }
