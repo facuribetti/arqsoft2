@@ -159,6 +159,7 @@
 	</dependencies>
 
 	<build>
-		<finalName>baseService</finalName>
+		<finalName>Alquiler de DVD</finalName>
 	</build>
+	
 </project>
