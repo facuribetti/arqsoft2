@@ -23,7 +23,6 @@ public class SocioService {
 		socioDao.insert(socio);
 		
 		SocioResponseDto response = (SocioResponseDto) new ModelDtoConverter().convertToDto(socio, new SocioResponseDto());	
-		
 		return response;
 	}
 	

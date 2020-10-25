@@ -28,7 +28,8 @@ public class SocioDaoTest {
 
 		logger.info("test de insert de un socio");
 		Socio socio = new Socio();
-		socio.setNombre("Facundo");
+		socio.setNombre("facundo");
+		socio.setApellido("ribetti");
 		
 		socioDao.insert(socio);
 		Assert.assertEquals(1, socio.getId().longValue());

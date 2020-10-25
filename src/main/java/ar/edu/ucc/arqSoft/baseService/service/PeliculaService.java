@@ -25,7 +25,7 @@ public class PeliculaService {
 		Pelicula pelicula = peliculaDao.load(id);
 		
 		PeliculaResponseDto response = new PeliculaResponseDto();
-		response.setNombre(pelicula.getTitulo());
+		response.setTitulo(pelicula.getTitulo());
 		
 		return response;
 		
