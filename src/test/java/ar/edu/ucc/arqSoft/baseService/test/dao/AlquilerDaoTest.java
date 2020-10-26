@@ -2,6 +2,8 @@ package ar.edu.ucc.arqSoft.baseService.test.dao;
 
 import java.util.Date;
 
+import javax.transaction.Transactional;
+
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.junit.Assert;
@@ -13,12 +15,14 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import ar.edu.ucc.arqSoft.baseService.dao.AlquilerDao;
 import ar.edu.ucc.arqSoft.baseService.model.Alquiler;
+import ar.edu.ucc.arqSoft.baseService.model.Pelicula;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "classpath:test-context.xml", "classpath:/spring/applicationContext.xml" })
+@Transactional 
 public class AlquilerDaoTest {
 
-	private static final Logger logger = LogManager.getLogger(SocioDaoTest.class);
+	private static final Logger logger = LogManager.getLogger(AlquilerDaoTest.class);
 
 	@Autowired
 	private AlquilerDao alquilerDao;
@@ -32,10 +36,11 @@ public class AlquilerDaoTest {
 		@SuppressWarnings("deprecation")
 		Date date = new Date(2020,1,1);
 		alquiler.setFechaAlquiler(date);
+	
 
 		alquilerDao.insert(alquiler);
 		
-		Assert.assertEquals(null,alquiler.getFechaAlquiler());
+		Assert.assertEquals(date,alquiler.getFechaAlquiler());
 		
 		return;
 	}

@@ -2,6 +2,8 @@ package ar.edu.ucc.arqSoft.baseService.test.dao;
 
 import java.util.List;
 
+import javax.transaction.Transactional;
+
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.junit.Assert;
@@ -16,6 +18,7 @@ import ar.edu.ucc.arqSoft.baseService.model.Socio;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = { "classpath:test-context.xml", "classpath:/spring/applicationContext.xml" })
+@Transactional 
 public class SocioDaoTest {
 	
 	private static final Logger logger = LogManager.getLogger(SocioDaoTest.class);
