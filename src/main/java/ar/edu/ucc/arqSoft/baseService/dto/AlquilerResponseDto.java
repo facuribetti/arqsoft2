@@ -8,17 +8,13 @@ public class AlquilerResponseDto implements DtoEntity{
 	
 	private Date fecha;
 	
+	private Long peliculaId;
+	
+	private Long socioId;
+	
 	private String apellido;
 	
 	private String titulo;
-
-	public Date getFecha() {
-		return fecha;
-	}
-
-	public void setFecha(Date fecha) {
-		this.fecha = fecha;
-	}
 
 	public String getApellido() {
 		return apellido;
@@ -35,5 +31,30 @@ public class AlquilerResponseDto implements DtoEntity{
 	public void setTitulo(String titulo) {
 		this.titulo = titulo;
 	}
-	
+
+	public Date getFecha() {
+		return fecha;
+	}
+
+	public void setFecha(Date fecha) {
+		this.fecha = fecha;
+	}
+
+	public Long getPeliculaId() {
+		return peliculaId;
+	}
+
+	public void setPeliculaId(Long peliculaId) {
+		this.peliculaId = peliculaId;
+	}
+
+	public Long getSocioId() {
+		return socioId;
+	}
+
+	public void setSocioId(Long socioId) {
+		this.socioId = socioId;
+	}
+
+
 }

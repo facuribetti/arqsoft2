@@ -1,7 +1,5 @@
 package ar.edu.ucc.arqSoft.baseService.dto;
 
-import java.util.Set;
-
 import ar.edu.ucc.arqSoft.common.dto.DtoEntity;
 
 public class SocioRequestDto implements DtoEntity{

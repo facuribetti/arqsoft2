@@ -5,11 +5,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import ar.edu.ucc.arqSoft.baseService.dao.PeliculaDao;
-import ar.edu.ucc.arqSoft.baseService.dto.PeliculaRequestDto;
 import ar.edu.ucc.arqSoft.baseService.dto.PeliculaResponseDto;
 import ar.edu.ucc.arqSoft.baseService.service.PeliculaService;
 import ar.edu.ucc.arqSoft.baseService.test.dao.PeliculaDaoTest;
+
+import java.util.List;
 
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
@@ -34,6 +34,17 @@ public class PeliculaServiceTest {
 		
 		Assert.assertEquals("IT", response.getTitulo());
 		
+		return;
+	}
+
+	@Test
+	public void testFindAll() {
+		
+		logger.info("Test de encontrar todas las peliculas");
+		
+		List<PeliculaResponseDto> response = peliculaService.getPeliculas();
+		
+		Assert.assertEquals("IT", response.get(0).getTitulo());
 		return;
 	}
 	
