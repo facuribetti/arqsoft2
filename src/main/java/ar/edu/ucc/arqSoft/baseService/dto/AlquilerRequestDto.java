@@ -1,5 +1,7 @@
 package ar.edu.ucc.arqSoft.baseService.dto;
 
+import java.util.Date;
+
 import ar.edu.ucc.arqSoft.common.dto.DtoEntity;
 
 public class AlquilerRequestDto implements DtoEntity {
@@ -7,6 +9,8 @@ public class AlquilerRequestDto implements DtoEntity {
 	private Long socioId;
 	
 	private Long peliculaId;
+	
+	private Date fechaAlquiler;
 
 	public Long getSocioId() {
 		return socioId;
@@ -23,6 +27,13 @@ public class AlquilerRequestDto implements DtoEntity {
 	public void setPeliculaId(Long peliculaId) {
 		this.peliculaId = peliculaId;
 	}
-	
+
+	public Date getFechaAlquiler() {
+		return fechaAlquiler;
+	}
+
+	public void setFechaAlquiler(Date fechaAlquiler) {
+		this.fechaAlquiler = fechaAlquiler;
+	}
 	
 }

@@ -29,10 +29,10 @@ public class SocioDaoTest {
 		logger.info("test de insert de un socio");
 		Socio socio = new Socio();
 		socio.setNombre("facundo");
-		socio.setApellido("ribetti");
 		
 		socioDao.insert(socio);
-		Assert.assertEquals(1, socio.getId().longValue());
+		
+		Assert.assertEquals(2, socio.getId().longValue());
 		return;
 
 	}
@@ -41,7 +41,7 @@ public class SocioDaoTest {
 	public void testFinfById() {
 		logger.info("test de busqueda de un socio por su ID");
 		Socio socio = socioDao.load((long)1);
-		
+		logger.info(socio);
 		Assert.assertEquals("Facundo", socio.getNombre());
 	}
 	
@@ -52,7 +52,7 @@ public class SocioDaoTest {
 		Socio socio = socioDao.load((long) 1);
 		socio.setNombre("Agustin");
 		socioDao.update(socio);
-
+		
 		Socio socio1 = socioDao.load((long) 1);
 		Assert.assertEquals("Agustin", socio1.getNombre());
 		return;

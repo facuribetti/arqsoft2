@@ -6,14 +6,6 @@ public class PeliculaResponseDto implements DtoEntity{
 	
 	private String titulo;
 	
-	public String getTitulo() {
-		return titulo;
-	}
-
-	public void setTitulo(String titulo) {
-		this.titulo = titulo;
-	}
-
 	private long id;
 	
 	private int anio;
@@ -43,4 +35,13 @@ public class PeliculaResponseDto implements DtoEntity{
 	public void setId(long id) {
 		this.id = id;
 	}
+	
+	public String getTitulo() {
+		return titulo;
+	}
+
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+
 }
